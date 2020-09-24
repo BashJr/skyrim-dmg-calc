@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ArmForm extends React.Component {
+export default class ArmorForm extends React.Component {
 
     render() {
         return (

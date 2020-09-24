@@ -1,10 +1,17 @@
 import React from 'react';
 
-export default class CharForm extends React.Component {
-
+export default class CharacterForm extends React.Component {
+    onFormSubmit = (e) => {
+        e.preventDefault();
+        console.log('onSubmit here!');
+    };
+    onClear = (e) => {
+        e.preventDefault();
+        console.log('onClear here!');
+    };
     render() {
         return (
-            <form>
+            <form onSubmit={this.onFormSubmit}>
                 <label>Name: </label>
                 <input type="text" />
                 <label>Character's Race: </label>
@@ -29,7 +36,7 @@ export default class CharForm extends React.Component {
                 <label>Stamina: </label>
                 <input type="number" />
                 <button>Submit</button>
-                <button>Clear Form</button>
+                <button onClick={this.onClear}>Clear</button>
             </form>
         );
     }
