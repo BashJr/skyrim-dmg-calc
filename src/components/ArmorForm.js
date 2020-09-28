@@ -1,7 +1,14 @@
 import React from 'react';
 
 export default class ArmorForm extends React.Component {
-
+    onFormSubmit = (e) => {
+        e.preventDefault();
+        console.log('onSubmit here!');
+    };
+    onClear = (e) => {
+        e.preventDefault();
+        console.log('onClear here!');
+    };
     render() {
         return (
             <form>
@@ -24,7 +31,7 @@ export default class ArmorForm extends React.Component {
                 <label>Right Hand Weapon: </label>
                 <input type="text" />
                 <button>Submit</button>
-                <button>Clear Form</button>
+                <button onClick={this.onClear}>Clear</button>
             </form>
         );
     }
