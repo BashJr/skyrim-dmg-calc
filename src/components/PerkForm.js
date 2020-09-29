@@ -30,17 +30,45 @@ const percentages = [
 export default class PerkForm extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+            light: 0,
+            heavy: 0,
+            archery: 0,
+            onehand: 0,
+            twohand: 0,
+            magickadmg: 0,
+            sneak: 0
+        };
+
+        this.onHandleChange = this.onHandleChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
+        this.onFormClear = this.onFormClear.bind(this);
         this.loadPercentages = this.loadPercentages.bind(this);
+    }
+
+    onHandleChange = (e) => {
+        const value = e.target.value;
+        this.setState({
+            [e.target.name]: value
+          });
     }
 
     onFormSubmit = (e) => {
         e.preventDefault();
-        console.log('onSubmit here!');
+        console.log(this.state);
     };
 
-    onClear = (e) => {
-        e.preventDefault();
-        console.log('onClear here!');
+    onFormClear = () => {
+        this.setState({
+            light: 0,
+            heavy: 0,
+            archery: 0,
+            onehand: 0,
+            twohand: 0,
+            magickadmg: 0,
+            sneak: 0
+          });
     };
 
     loadPercentages = (percentages) => {
@@ -53,37 +81,37 @@ export default class PerkForm extends React.Component {
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.onFormSubmit}>
                 <label>Light Armor: </label>
-                <select>
+                <select name="light" value={this.state.light} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select >
                 <label>Heavy Armor: </label>
-                <select>
+                <select name="heavy" value={this.state.heavy} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select >
                 <label>Archery: </label>
-                <select>
+                <select name="archery" value={this.state.archery} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
                 </select>
                 <label>One-Handed: </label>
-                <select>
+                <select name="onehand" value={this.state.onehand} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
                 </select>
                 <label>Two-Handed: </label>
-                <select>
+                <select name="twohand" value={this.state.twohand} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
                 </select>
                 <label>Magicka: </label>
-                <select>
+                <select name="magickadmg" value={this.state.magickadmg} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
                 </select>
                 <label>Sneak: </label>
-                <select>
+                <select name="sneak" value={this.state.sneak} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
                 </select>
-                <button>Submit</button>
-                <button onClick={this.onClear}>Clear</button>
+                <button type="submit">Submit</button>
+                <button type="button" onClick={this.onFormClear}>Clear</button>
             </form>
         );
     }

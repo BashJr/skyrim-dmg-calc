@@ -43,17 +43,6 @@ const races = [
     }
 ];
 
-// const character = [
-//     {
-//         name: '',
-//         race: '',
-//         level: 0,
-//         health: 0,
-//         magicka: 0,
-//         stamina: 0
-//     }
-// ];
-
 export default class CharacterForm extends React.Component {
     constructor() {
         super();
@@ -72,40 +61,28 @@ export default class CharacterForm extends React.Component {
         this.onFormClear = this.onFormClear.bind(this);
         this.loadRaces = this.loadRaces.bind(this);
     }
-    // state = {
-    //     name: '',
-    //     race: '',
-    //     level: 0,
-    //     health: 0,
-    //     magicka: 0,
-    //     stamina: 0
-
-    // };
-
 
     onHandleChange = (e) => {
-        // this.setState({
-        //     name: e.target.value,
-        //     race: e.target.value,
-        //     level: e.target.value,
-        //     health: e.target.value,
-        //     magicka: e.target.value,
-        //     stamina: e.target.value
-        // });
-
         const value = e.target.value;
         this.setState({
             [e.target.name]: value
           });
     }
+
     onFormSubmit = (e) => {
         e.preventDefault();
-
         console.log(this.state);
     };
-    onFormClear = (e) => {
-        e.preventDefault();
-        console.log('onClear here!');
+
+    onFormClear = () => {
+        this.setState({
+            name: '',
+            race: '',
+            level: 0,
+            health: 0,
+            magicka: 0,
+            stamina: 0
+          });
     };
 
     loadRaces = (races) => {
@@ -133,8 +110,8 @@ export default class CharacterForm extends React.Component {
                 <input type="number" name="magicka" value={this.state.magicka} onChange={this.onHandleChange} />
                 <label>Stamina: </label>
                 <input type="number" name="stamina" value={this.state.stamina} onChange={this.onHandleChange} />
-                <button onClick={this.onFormSubmit}>Submit</button>
-                <button onClick={this.onFormClear}>Clear</button>
+                <button type="submit">Submit</button>
+                <button type="button" onClick={this.onFormClear}>Clear</button>
             </form>
         );
     }
