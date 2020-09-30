@@ -2,28 +2,32 @@ import React from 'react';
 
 const percentages = [
     {
+        label: "",
+        value: "",
+    },
+    {
         label: "0%",
-        value: "0%",
+        value: "0",
     },
     {
         label: "20%", 
-        value: "20%",
+        value: "20",
     },
     {
         label: "40%",
-        value: "40%",
+        value: "40",
     },
     {
         label: "60%",
-        value: "60%",
+        value: "60",
     },
     {
         label: "80%",
-        value: "80%",
+        value: "80",
     },
     {
         label: "100%",
-        value: "100%",
+        value: "100",
     }
 ];
 
@@ -32,13 +36,13 @@ export default class PerkForm extends React.Component {
         super();
 
         this.state = {
-            light: 0,
-            heavy: 0,
-            archery: 0,
-            onehand: 0,
-            twohand: 0,
-            magickadmg: 0,
-            sneak: 0
+            light: '',
+            heavy: '',
+            archery: '',
+            onehand: '',
+            twohand: '',
+            magickadmg: '',
+            sneak: ''
         };
 
         this.onHandleChange = this.onHandleChange.bind(this);
@@ -56,18 +60,23 @@ export default class PerkForm extends React.Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+
+        if(!this.state.light || !this.state.heavy || !this.state.archery || !this.state.onehand || !this.state.twohand || !this.state.magickadmg || !this.state.sneak) {
+            alert('Please complete form with all values.')
+        } else {
+            console.log(this.state);
+        }
     };
 
     onFormClear = () => {
         this.setState({
-            light: 0,
-            heavy: 0,
-            archery: 0,
-            onehand: 0,
-            twohand: 0,
-            magickadmg: 0,
-            sneak: 0
+            light: '',
+            heavy: '',
+            archery: '',
+            onehand: '',
+            twohand: '',
+            magickadmg: '',
+            sneak: ''
           });
     };
 
@@ -85,11 +94,11 @@ export default class PerkForm extends React.Component {
                 <label>Light Armor: </label>
                 <select name="light" value={this.state.light} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select >
+                </select>
                 <label>Heavy Armor: </label>
                 <select name="heavy" value={this.state.heavy} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select >
+                </select>
                 <label>Archery: </label>
                 <select name="archery" value={this.state.archery} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}

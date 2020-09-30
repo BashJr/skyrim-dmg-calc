@@ -30,7 +30,11 @@ export default class ArmorForm extends React.Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        if(!this.state.helmet || !this.state.armor || !this.state.gloves || !this.state.boots || !this.state.necklace || !this.state.ring || !this.state.lefthand || !this.state.righthand) {
+            alert('Please complete form with all values.')
+        } else {
+            console.log(this.state);
+        }
     };
 
     onFormClear = () => {

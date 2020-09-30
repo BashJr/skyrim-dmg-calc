@@ -2,6 +2,10 @@ import React from 'react';
 
 const races = [
     {
+        label: "",
+        value: ""
+    },
+    {
         label: "High Elf",
         value: "High Elf",
     },
@@ -71,7 +75,11 @@ export default class CharacterForm extends React.Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        if(!this.state.name || !this.state.race || !this.state.level || !this.state.health || !this.state.magicka || !this.state.stamina) {
+            alert('Please complete form with all values.')
+        } else {
+            console.log(this.state);
+        }
     };
 
     onFormClear = () => {
@@ -103,13 +111,13 @@ export default class CharacterForm extends React.Component {
                     {this.loadRaces(races)}
                 </select>
                 <label>Character Level: </label>
-                <input type="number" name="level" min="1" max="999" value={this.state.level} onChange={this.onHandleChange} />
+                <input type="number" name="level" min="1" value={this.state.level} onChange={this.onHandleChange} />
                 <label>Health: </label>
-                <input type="number" name="health" value={this.state.health} onChange={this.onHandleChange} />
+                <input type="number" name="health" min="1" value={this.state.health} onChange={this.onHandleChange} />
                 <label>Magicka: </label>
-                <input type="number" name="magicka" value={this.state.magicka} onChange={this.onHandleChange} />
+                <input type="number" name="magicka" min="1" value={this.state.magicka} onChange={this.onHandleChange} />
                 <label>Stamina: </label>
-                <input type="number" name="stamina" value={this.state.stamina} onChange={this.onHandleChange} />
+                <input type="number" name="stamina" min="1" value={this.state.stamina} onChange={this.onHandleChange} />
                 <button type="submit">Submit</button>
                 <button type="button" onClick={this.onFormClear}>Clear</button>
             </form>

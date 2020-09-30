@@ -15,7 +15,7 @@ export default class MasterForm extends React.Component {
     render() {
         return (
             <div>
-                <PerkForm />
+                <CharacterForm />
             </div>
 
         );
