@@ -14,7 +14,7 @@ import PerkForm from './PerkForm.js';
 export default class MasterForm extends React.Component {
     render() {
         return (
-            <div>
+            <div className="container">
                 <CharacterForm />
             </div>
 

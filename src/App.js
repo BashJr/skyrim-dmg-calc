@@ -5,12 +5,12 @@ import './styles/styles.scss';
 import MasterForm from '../src/components/MasterForm';
 
 
-const jsx = (
-    <div>
-        <p>This is my boilerplate for my Skyrim App!</p>
-        <MasterForm />
-    </div>
+// const jsx = (
+//     <div>
+//         <p>This is my boilerplate for my Skyrim App!</p>
+//         <MasterForm />
+//     </div>
     
-);
+// );
 
-ReactDom.render(jsx, document.getElementById('app'));
+ReactDom.render(<MasterForm />, document.getElementById('app'));
