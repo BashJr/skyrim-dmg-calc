@@ -9,13 +9,21 @@ import React from 'react';
 import ArmorForm from './ArmorForm.js';
 import CharacterForm from './CharacterForm.js';
 import PerkForm from './PerkForm.js';
+import Header from './Header.js';
+import Footer from './Footer.js'
 
 
 export default class MasterForm extends React.Component {
     render() {
+
+        const title = 'Skyrim Damage Calculator';
+        const author = 'Zach Watts';
+
         return (
             <div className="container">
+                <Header title={title} />
                 <CharacterForm />
+                <Footer author={author} />
             </div>
 
         );

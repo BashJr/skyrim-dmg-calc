@@ -91,6 +91,7 @@ export default class PerkForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.onFormSubmit}>
+                <h2>Perk Form</h2>
                 <label>Light Armor: </label>
                 <select name="light" value={this.state.light} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
