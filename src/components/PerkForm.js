@@ -56,6 +56,7 @@ export default class PerkForm extends React.Component {
         this.setState({
             [e.target.name]: value
           });
+        this.props.onHandleChange(e);
     }
 
     onFormSubmit = (e) => {
@@ -65,6 +66,7 @@ export default class PerkForm extends React.Component {
             alert('Please complete form with all values.')
         } else {
             console.log(this.state);
+            this.props.onFormSubmit();
         }
     };
 
@@ -95,31 +97,31 @@ export default class PerkForm extends React.Component {
                 <label>Light Armor: </label>
                 <select name="light" value={this.state.light} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select> <br />
                 <label>Heavy Armor: </label>
                 <select name="heavy" value={this.state.heavy} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select> <br />
                 <label>Archery: </label>
                 <select name="archery" value={this.state.archery} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select> <br />
                 <label>One-Handed: </label>
                 <select name="onehand" value={this.state.onehand} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select> <br />
                 <label>Two-Handed: </label>
                 <select name="twohand" value={this.state.twohand} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select> <br />
                 <label>Magicka: </label>
                 <select name="magickadmg" value={this.state.magickadmg} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select> <br />
                 <label>Sneak: </label>
                 <select name="sneak" value={this.state.sneak} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select>
+                </select> <br />
                 <button type="submit">Submit</button>
                 <button type="button" onClick={this.onFormClear}>Clear</button>
             </form>

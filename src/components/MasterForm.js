@@ -13,7 +13,50 @@ import Header from './Header.js';
 import Footer from './Footer.js'
 
 
+
 export default class MasterForm extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            name: '',
+            race: '',
+            level: '',
+            health: '',
+            magicka: '',
+            stamina: '',
+            light: '',
+            heavy: '',
+            archery: '',
+            onehand: '',
+            twohand: '',
+            magickadmg: '',
+            sneak: '',
+            helmet: '',
+            armor: '',
+            gloves: '',
+            boots: '',
+            necklace: '',
+            ring: '',
+            arrow: '',
+            lefthand: '',
+            righthand: ''
+        }
+
+    }
+
+    handleCharacterSubmit = () => {
+        console.log(this.state);
+    }
+
+    handleCharacterChange = (e) => {
+        const value = e.target.value;
+        this.setState({
+            [e.target.name]: value
+          });
+    }
+
+
     render() {
 
         const title = 'Skyrim Damage Calculator';
@@ -21,9 +64,24 @@ export default class MasterForm extends React.Component {
 
         return (
             <div className="container">
-                <Header title={title} />
-                <CharacterForm />
-                <Footer author={author} />
+                <Header 
+                    title={title} 
+                />
+                <CharacterForm 
+                    onFormSubmit={this.handleCharacterSubmit} 
+                    onHandleChange={this.handleCharacterChange} 
+                />
+                <PerkForm 
+                    onFormSubmit={this.handleCharacterSubmit} 
+                    onHandleChange={this.handleCharacterChange} 
+                />
+                <ArmorForm 
+                    onFormSubmit={this.handleCharacterSubmit} 
+                    onHandleChange={this.handleCharacterChange} 
+                />
+                <Footer 
+                    author={author} 
+                />
             </div>
 
         );

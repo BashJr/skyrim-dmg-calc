@@ -54,10 +54,10 @@ export default class CharacterForm extends React.Component {
         this.state = {
             name: '',
             race: '',
-            level: 0,
-            health: 0,
-            magicka: 0,
-            stamina: 0
+            level: '',
+            health: '',
+            magicka: '',
+            stamina: ''
         };
 
         this.onHandleChange = this.onHandleChange.bind(this);
@@ -71,6 +71,7 @@ export default class CharacterForm extends React.Component {
         this.setState({
             [e.target.name]: value
           });
+          this.props.onHandleChange(e);
     }
 
     onFormSubmit = (e) => {
@@ -79,6 +80,7 @@ export default class CharacterForm extends React.Component {
             alert('Please complete form with all values.')
         } else {
             console.log(this.state);
+            this.props.onFormSubmit();
         }
     };
 
@@ -86,10 +88,10 @@ export default class CharacterForm extends React.Component {
         this.setState({
             name: '',
             race: '',
-            level: 0,
-            health: 0,
-            magicka: 0,
-            stamina: 0
+            level: '',
+            health: '',
+            magicka: '',
+            stamina: ''
           });
     };
 
