@@ -22,10 +22,11 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "serve": "webpack-dev-server",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run serve" 
+    "heroku-postbuild": "yarn run build:prod" 
 
   },
   "author": "BashJr - Zach Watts",
