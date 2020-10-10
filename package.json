@@ -11,6 +11,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^4.2.1",
+    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
@@ -26,8 +27,7 @@
     "build:prod": "webpack -p --env production",
     "serve": "webpack-dev-server",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build:prod" 
-
+    "heroku-postbuild": "yarn run build:prod"
   },
   "author": "BashJr - Zach Watts",
   "license": "ISC",
