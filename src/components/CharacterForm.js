@@ -48,8 +48,8 @@ const races = [
 ];
 
 export default class CharacterForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             name: '',

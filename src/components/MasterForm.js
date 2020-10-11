@@ -25,6 +25,7 @@ export default class MasterForm extends React.Component {
             health: '',
             magicka: '',
             stamina: '',
+            showCharacter: true,
             light: '',
             heavy: '',
             archery: '',
@@ -32,6 +33,7 @@ export default class MasterForm extends React.Component {
             twohand: '',
             magickadmg: '',
             sneak: '',
+            showPerk: false,
             helmet: '',
             armor: '',
             gloves: '',
@@ -40,22 +42,43 @@ export default class MasterForm extends React.Component {
             ring: '',
             arrow: '',
             lefthand: '',
-            righthand: ''
+            righthand: '',
+            showArmor: false
         }
 
     }
 
     handleCharacterSubmit = () => {
         console.log(this.state);
+        this.handleVisibleForm();
     }
 
     handleCharacterChange = (e) => {
         const value = e.target.value;
         this.setState({
             [e.target.name]: value
-          });
+        });
     }
 
+    handleVisibleForm = () => {
+        if (this.state.showCharacter == true) {
+            this.setState({
+                showCharacter: false,
+                showPerk: true
+            });
+        }
+        else if (this.state.showPerk == true) {
+            this.setState({
+                showPerk: false,
+                showArmor: true
+            });
+        }
+        else {
+            this.setState({
+                showArmor: false
+            })
+        }
+    }
 
     render() {
 
@@ -64,23 +87,23 @@ export default class MasterForm extends React.Component {
 
         return (
             <div className="container">
-                <Header 
-                    title={title} 
+                <Header
+                    title={title}
                 />
-                <CharacterForm 
-                    onFormSubmit={this.handleCharacterSubmit} 
-                    onHandleChange={this.handleCharacterChange} 
-                />
-                <PerkForm 
-                    onFormSubmit={this.handleCharacterSubmit} 
-                    onHandleChange={this.handleCharacterChange} 
-                />
-                <ArmorForm 
-                    onFormSubmit={this.handleCharacterSubmit} 
-                    onHandleChange={this.handleCharacterChange} 
-                />
-                <Footer 
-                    author={author} 
+                {this.state.showCharacter && <CharacterForm
+                    onFormSubmit={this.handleCharacterSubmit}
+                    onHandleChange={this.handleCharacterChange}
+                />}
+                {this.state.showPerk && <PerkForm
+                    onFormSubmit={this.handleCharacterSubmit}
+                    onHandleChange={this.handleCharacterChange}
+                />}
+                {this.state.showArmor && <ArmorForm
+                    onFormSubmit={this.handleCharacterSubmit}
+                    onHandleChange={this.handleCharacterChange}
+                />}
+                <Footer
+                    author={author}
                 />
             </div>
 
