@@ -11,6 +11,7 @@ import CharacterForm from './CharacterForm.js';
 import PerkForm from './PerkForm.js';
 import Header from './Header.js';
 import Footer from './Footer.js'
+import MasterFormOutput from './MasterFormOutput.js';
 
 
 
@@ -27,10 +28,15 @@ export default class MasterForm extends React.Component {
             stamina: '',
             showCharacter: true,
             light: '',
+            lightlevel: '',
             heavy: '',
+            heavylevel: '',
             archery: '',
+            archerylevel: '',
             onehand: '',
+            onehandlevel: '',
             twohand: '',
+            twohandlevel: '',
             magickadmg: '',
             sneak: '',
             showPerk: false,
@@ -43,7 +49,8 @@ export default class MasterForm extends React.Component {
             arrow: '',
             lefthand: '',
             righthand: '',
-            showArmor: false
+            showArmor: false,
+            showMasterFormOutput: false
         }
 
     }
@@ -60,6 +67,10 @@ export default class MasterForm extends React.Component {
         });
     }
 
+    // handleMasterSubmit = () => {
+    //     data = this.state;
+    // }
+
     handleVisibleForm = () => {
         if (this.state.showCharacter == true) {
             this.setState({
@@ -74,8 +85,10 @@ export default class MasterForm extends React.Component {
             });
         }
         else {
+            //this.handleMasterSubmit();
             this.setState({
-                showArmor: false
+                showArmor: false,
+                showMasterFormOutput: true
             })
         }
     }
@@ -84,6 +97,7 @@ export default class MasterForm extends React.Component {
 
         const title = 'Skyrim Damage Calculator';
         const author = 'Zach Watts';
+        let data = this.state;
 
         return (
             <div className="container">
@@ -101,6 +115,9 @@ export default class MasterForm extends React.Component {
                 {this.state.showArmor && <ArmorForm
                     onFormSubmit={this.handleCharacterSubmit}
                     onHandleChange={this.handleCharacterChange}
+                />}
+                {this.state.showMasterFormOutput && <MasterFormOutput 
+                    data={data}
                 />}
                 <Footer
                     author={author}

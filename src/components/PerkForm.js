@@ -37,10 +37,15 @@ export default class PerkForm extends React.Component {
 
         this.state = {
             light: '',
+            lightlevel: '',
             heavy: '',
+            heavylevel: '',
             archery: '',
+            archerylevel: '',
             onehand: '',
+            onehandlevel: '',
             twohand: '',
+            twohandlevel: '',
             magickadmg: '',
             sneak: ''
         };
@@ -73,10 +78,15 @@ export default class PerkForm extends React.Component {
     onFormClear = () => {
         this.setState({
             light: '',
+            lightlevel: '',
             heavy: '',
+            heavylevel: '',
             archery: '',
+            archerylevel: '',
             onehand: '',
+            onehandlevel: '',
             twohand: '',
+            twohandlevel: '',
             magickadmg: '',
             sneak: ''
           });
@@ -93,27 +103,37 @@ export default class PerkForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.onFormSubmit}>
-                <h2>Perk Form</h2>
+                <h2>Damage Bonus Form</h2>
                 <label>Light Armor: </label>
                 <select name="light" value={this.state.light} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select> <br />
+                </select>
+                <input type="number" name="lightlevel" min="1" value={this.state.lightlevel} onChange={this.onHandleChange} placeholder="Light Armor Level"/>
+                 <br />
                 <label>Heavy Armor: </label>
                 <select name="heavy" value={this.state.heavy} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select> <br />
+                </select> 
+                <input type="number" name="heavylevel" min="1" value={this.state.heavylevel} onChange={this.onHandleChange} placeholder="Heavy Armor Level"/>
+                <br />
                 <label>Archery: </label>
                 <select name="archery" value={this.state.archery} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select> <br />
+                </select> 
+                <input type="number" name="archerylevel" min="1" value={this.state.archerylevel} onChange={this.onHandleChange} placeholder="Archery Level"/>
+                <br />
                 <label>One-Handed: </label>
                 <select name="onehand" value={this.state.onehand} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select> <br />
+                </select> 
+                <input type="number" name="onehandlevel" min="1" value={this.state.onehandlevel} onChange={this.onHandleChange} placeholder="One Handed Level" /> 
+                <br />
                 <label>Two-Handed: </label>
                 <select name="twohand" value={this.state.twohand} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
-                </select> <br />
+                </select> 
+                <input type="number" name="twohandlevel" min="1" value={this.state.twohandlevel} onChange={this.onHandleChange} placeholder="Two Handed Level" />
+                <br />
                 <label>Magicka: </label>
                 <select name="magickadmg" value={this.state.magickadmg} onChange={this.onHandleChange}>
                     {this.loadPercentages(percentages)}
