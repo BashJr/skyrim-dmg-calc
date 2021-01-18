@@ -106,7 +106,7 @@ export default class CharacterForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.onFormSubmit} className="label">
-                <h2>Character Form TEST CORRECT PULL HERE</h2>
+                <h2>Character Form</h2>
                 <label>Name: </label>
                 <input type="text" name="name" value={this.state.name} onChange={this.onHandleChange} /> <br />
                 <label>Character's Race: </label>
