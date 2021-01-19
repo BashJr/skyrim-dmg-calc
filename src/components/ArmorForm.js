@@ -56,7 +56,7 @@ export default class ArmorForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.onFormSubmit}>
-                <h2>Armor Form</h2>
+                <h2>Armory Form</h2>
                 <label>Helmet: </label>
                 <input type="text" name="helmet" value={this.state.helmet} onChange={this.onHandleChange}/> <br />
                 <label>Armor: </label>
