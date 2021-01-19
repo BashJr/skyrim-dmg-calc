@@ -13,8 +13,6 @@ import Header from './Header.js';
 import Footer from './Footer.js'
 import MasterFormOutput from './MasterFormOutput.js';
 
-
-
 export default class MasterForm extends React.Component {
     constructor() {
         super();
@@ -52,7 +50,6 @@ export default class MasterForm extends React.Component {
             showArmor: false,
             showMasterFormOutput: false
         }
-
     }
 
     handleCharacterSubmit = () => {
@@ -66,10 +63,6 @@ export default class MasterForm extends React.Component {
             [e.target.name]: value
         });
     }
-
-    // handleMasterSubmit = () => {
-    //     data = this.state;
-    // }
 
     handleVisibleForm = () => {
         if (this.state.showCharacter == true) {
@@ -85,7 +78,6 @@ export default class MasterForm extends React.Component {
             });
         }
         else {
-            //this.handleMasterSubmit();
             this.setState({
                 showArmor: false,
                 showMasterFormOutput: true
