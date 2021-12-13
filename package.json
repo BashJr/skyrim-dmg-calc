@@ -1,40 +1,11 @@
 {
   "name": "skyrim-dmg-calc",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Helps calculate MAX damage with Skyrim Weapons.",
   "main": "index.js",
-  "dependencies": {
-    "@babel/core": "^7.11.6",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "7",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^4.2.1",
-    "express": "4.15.4",
-    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
-    "node-sass": "^4.14.1",
-    "normalize.css": "^8.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-modal": "^3.11.2",
-    "sass-loader": "6.0.6",
-    "style-loader": "^1.2.1"
-
-  },
-  "scripts": {
-    "build:dev": "webpack",
-    "build:prod": "webpack -p --env=production",
-    "serve": "webpack serve",
-    "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build:prod"
-  },
+  "dependencies": {},
+  "scripts": {},
   "author": "BashJr - Zach Watts",
   "license": "ISC",
-  "devDependencies": {    
-    "webpack": "4.44.1",
-    "webpack-cli": "4.0.0",
-    "webpack-dev-server": "3.7.0"
-  }
+  "devDependencies": {}
 }
