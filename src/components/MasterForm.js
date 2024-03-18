@@ -65,13 +65,13 @@ export default class MasterForm extends React.Component {
     }
 
     handleVisibleForm = () => {
-        if (this.state.showCharacter == true) {
+        if (this.state.showCharacter === true) {
             this.setState({
                 showCharacter: false,
                 showPerk: true
             });
         }
-        else if (this.state.showPerk == true) {
+        else if (this.state.showPerk === true) {
             this.setState({
                 showPerk: false,
                 showArmor: true

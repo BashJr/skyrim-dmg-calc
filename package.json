@@ -1,11 +1,43 @@
 {
   "name": "skyrim-dmg-calc",
   "version": "2.0.0",
-  "description": "Helps calculate MAX damage with Skyrim Weapons.",
-  "main": "index.js",
-  "dependencies": {},
-  "scripts": {},
   "author": "BashJr - Zach Watts",
-  "license": "ISC",
-  "devDependencies": {}
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "normalize-css-color": "^1.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.72.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "web-vitals": "^2.1.2"
+  }
 }
