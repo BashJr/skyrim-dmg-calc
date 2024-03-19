@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/_form.scss';
 
 export default class MasterFormOutput extends React.Component{
     constructor(props) {

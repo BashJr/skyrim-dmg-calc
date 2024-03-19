@@ -12,6 +12,7 @@ import PerkForm from './PerkForm.js';
 import Header from './Header.js';
 import Footer from './Footer.js'
 import MasterFormOutput from './MasterFormOutput.js';
+import '../styles/components/_form.scss';
 
 export default class MasterForm extends React.Component {
     constructor() {

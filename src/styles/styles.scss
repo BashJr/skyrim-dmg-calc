@@ -1,6 +1,10 @@
+// Base Styling
 @import './base/settings';
 @import './base/base';
+
+//Component Styling
 @import './components/container';
 @import './components/label';
-@import './components/characterForm';
-@import './components/armorForm';
+@import './components/form';
+// @import './components/characterForm';
+// @import './components/armorForm';

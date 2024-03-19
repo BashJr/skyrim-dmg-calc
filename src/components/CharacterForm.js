@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/_characterForm.scss';
+import '../styles/components/_form.scss';
 
 const races = [
     {
@@ -106,7 +106,7 @@ export default class CharacterForm extends React.Component {
 
     render() {
         return (
-            <div className="characterForm">
+            <div className="skyrim-form character-form">
                 <form onSubmit={this.onFormSubmit} className="label">
                     <h2>Character Form</h2>
                     <div className='form-input'>
@@ -140,9 +140,11 @@ export default class CharacterForm extends React.Component {
                         <label>Stamina: </label>
                         <input type="number" name="stamina" min="1" value={this.state.stamina} onChange={this.onHandleChange} />
                     </div>
-
-                    <button type="submit">Submit</button>
-                    <button type="button" onClick={this.onFormClear}>Clear</button>
+                    
+                    <div className='form-buttons'>
+                        <button className='clear-button' type="button" onClick={this.onFormClear}>Clear</button>
+                        <button className='submit-button' type="submit">Submit</button>
+                    </div>
                 </form>
             </div>
         );
