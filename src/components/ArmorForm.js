@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/_armorForm.scss';
 
 export default class ArmorForm extends React.Component {
     constructor() {
@@ -55,29 +56,31 @@ export default class ArmorForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onFormSubmit}>
-                <h2>Armory Form</h2>
-                <label>Helmet: </label>
-                <input type="text" name="helmet" value={this.state.helmet} onChange={this.onHandleChange}/> <br />
-                <label>Armor: </label>
-                <input type="text" name="armor" value={this.state.armor} onChange={this.onHandleChange}/> <br />
-                <label>Gloves: </label>
-                <input type="text" name="gloves" value={this.state.gloves} onChange={this.onHandleChange}/> <br />
-                <label>Boots: </label>
-                <input type="text" name="boots" value={this.state.boots} onChange={this.onHandleChange}/> <br />
-                <label>Necklace: </label>
-                <input type="text" name="necklace" value={this.state.necklace} onChange={this.onHandleChange}/> <br />
-                <label>Ring: </label>
-                <input type="text" name="ring" value={this.state.ring} onChange={this.onHandleChange}/> <br />
-                <label>Arrow: </label>
-                <input type="text" name="arrow" value={this.state.arrow} onChange={this.onHandleChange}/> <br />
-                <label>Left Hand Weapon: </label>
-                <input type="text" name="lefthand" value={this.state.lefthand} onChange={this.onHandleChange}/> <br />
-                <label>Right Hand Weapon: </label>
-                <input type="text" name="righthand" value={this.state.righthand} onChange={this.onHandleChange}/> <br />
-                <button type="submit">Submit</button>
-                <button type="button" onClick={this.onFormClear}>Clear</button>
-            </form>
+            <div className='armorForm'>
+                <form onSubmit={this.onFormSubmit}>
+                    <h2>Armory Form</h2>
+                    <label>Helmet: </label>
+                    <input type="text" name="helmet" value={this.state.helmet} onChange={this.onHandleChange}/> <br />
+                    <label>Armor: </label>
+                    <input type="text" name="armor" value={this.state.armor} onChange={this.onHandleChange}/> <br />
+                    <label>Gloves: </label>
+                    <input type="text" name="gloves" value={this.state.gloves} onChange={this.onHandleChange}/> <br />
+                    <label>Boots: </label>
+                    <input type="text" name="boots" value={this.state.boots} onChange={this.onHandleChange}/> <br />
+                    <label>Necklace: </label>
+                    <input type="text" name="necklace" value={this.state.necklace} onChange={this.onHandleChange}/> <br />
+                    <label>Ring: </label>
+                    <input type="text" name="ring" value={this.state.ring} onChange={this.onHandleChange}/> <br />
+                    <label>Arrow: </label>
+                    <input type="text" name="arrow" value={this.state.arrow} onChange={this.onHandleChange}/> <br />
+                    <label>Left Hand Weapon: </label>
+                    <input type="text" name="lefthand" value={this.state.lefthand} onChange={this.onHandleChange}/> <br />
+                    <label>Right Hand Weapon: </label>
+                    <input type="text" name="righthand" value={this.state.righthand} onChange={this.onHandleChange}/> <br />
+                    <button type="submit">Submit</button>
+                    <button type="button" onClick={this.onFormClear}>Clear</button>
+                </form>
+            </div> 
         );
     }
 };

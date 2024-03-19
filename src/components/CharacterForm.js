@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/_characterForm.scss';
 
 const races = [
     {
@@ -105,25 +106,27 @@ export default class CharacterForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onFormSubmit} className="label">
-                <h2>Character Form</h2>
-                <label>Name: </label>
-                <input type="text" name="name" value={this.state.name} onChange={this.onHandleChange} /> <br />
-                <label>Character's Race: </label>
-                <select name="race" value={this.state.race} onChange={this.onHandleChange} >
-                    {this.loadRaces(races)}
-                </select> <br />
-                <label>Character Level: </label>
-                <input type="number" name="level" min="1" value={this.state.level} onChange={this.onHandleChange} /> <br />
-                <label>Health: </label>
-                <input type="number" name="health" min="1" value={this.state.health} onChange={this.onHandleChange} /> <br />
-                <label>Magicka: </label>
-                <input type="number" name="magicka" min="1" value={this.state.magicka} onChange={this.onHandleChange} /> <br />
-                <label>Stamina: </label>
-                <input type="number" name="stamina" min="1" value={this.state.stamina} onChange={this.onHandleChange} /> <br />
-                <button type="submit">Submit</button>
-                <button type="button" onClick={this.onFormClear}>Clear</button>
-            </form>
+            <div className="characterForm">
+                <form onSubmit={this.onFormSubmit} className="label">
+                    <h2>Character Form</h2>
+                    <label>Name: </label>
+                    <input type="text" name="name" value={this.state.name} onChange={this.onHandleChange} /> <br />
+                    <label>Character's Race: </label>
+                    <select name="race" value={this.state.race} onChange={this.onHandleChange} >
+                        {this.loadRaces(races)}
+                    </select> <br />
+                    <label>Character Level: </label>
+                    <input type="number" name="level" min="1" value={this.state.level} onChange={this.onHandleChange} /> <br />
+                    <label>Health: </label>
+                    <input type="number" name="health" min="1" value={this.state.health} onChange={this.onHandleChange} /> <br />
+                    <label>Magicka: </label>
+                    <input type="number" name="magicka" min="1" value={this.state.magicka} onChange={this.onHandleChange} /> <br />
+                    <label>Stamina: </label>
+                    <input type="number" name="stamina" min="1" value={this.state.stamina} onChange={this.onHandleChange} /> <br />
+                    <button type="submit">Submit</button>
+                    <button type="button" onClick={this.onFormClear}>Clear</button>
+                </form>
+            </div>
         );
     }
 };
