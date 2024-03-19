@@ -109,20 +109,38 @@ export default class CharacterForm extends React.Component {
             <div className="characterForm">
                 <form onSubmit={this.onFormSubmit} className="label">
                     <h2>Character Form</h2>
-                    <label>Name: </label>
-                    <input type="text" name="name" value={this.state.name} onChange={this.onHandleChange} /> <br />
-                    <label>Character's Race: </label>
-                    <select name="race" value={this.state.race} onChange={this.onHandleChange} >
-                        {this.loadRaces(races)}
-                    </select> <br />
-                    <label>Character Level: </label>
-                    <input type="number" name="level" min="1" value={this.state.level} onChange={this.onHandleChange} /> <br />
-                    <label>Health: </label>
-                    <input type="number" name="health" min="1" value={this.state.health} onChange={this.onHandleChange} /> <br />
-                    <label>Magicka: </label>
-                    <input type="number" name="magicka" min="1" value={this.state.magicka} onChange={this.onHandleChange} /> <br />
-                    <label>Stamina: </label>
-                    <input type="number" name="stamina" min="1" value={this.state.stamina} onChange={this.onHandleChange} /> <br />
+                    <div className='form-input'>
+                        <label>Name: </label>
+                        <input type="text" name="name" value={this.state.name} onChange={this.onHandleChange} />
+                    </div>
+
+                    <div className='form-input'>
+                        <label>Character's Race: </label>
+                        <select name="race" value={this.state.race} onChange={this.onHandleChange} >
+                            {this.loadRaces(races)}
+                        </select>
+                    </div>
+
+                    <div className='form-input'>
+                        <label>Character Level: </label>
+                        <input type="number" name="level" min="1" value={this.state.level} onChange={this.onHandleChange} /> 
+                    </div>
+
+                    <div className='form-input'>
+                        <label>Health: </label>
+                        <input type="number" name="health" min="1" value={this.state.health} onChange={this.onHandleChange} /> 
+                    </div>
+
+                    <div className='form-input'>
+                        <label>Magicka: </label>
+                        <input type="number" name="magicka" min="1" value={this.state.magicka} onChange={this.onHandleChange} />
+                    </div>
+
+                    <div className='form-input'>
+                        <label>Stamina: </label>
+                        <input type="number" name="stamina" min="1" value={this.state.stamina} onChange={this.onHandleChange} />
+                    </div>
+
                     <button type="submit">Submit</button>
                     <button type="button" onClick={this.onFormClear}>Clear</button>
                 </form>
