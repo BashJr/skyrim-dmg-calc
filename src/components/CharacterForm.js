@@ -146,6 +146,8 @@ export default class CharacterForm extends React.Component {
                         <button className='submit-button' type="submit">Submit</button>
                     </div>
                 </form>
+                <div className='character-image'>
+                </div>
             </div>
         );
     }

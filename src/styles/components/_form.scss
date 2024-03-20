@@ -11,6 +11,10 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        label {
+            width: 232px;
+        }
     }
 
     .form-buttons {
@@ -28,8 +32,27 @@
             font-size: 25px;
         }
 
+        button:hover,
+        button:active {
+            background-color: rgb(50, 205, 50, .7);
+        }
+
         .clear-button {
             background-color: red;
         }
+
+        .clear-button:hover,
+        .clear-button:active {
+            background-color: rgb(255, 0, 0, .7);
+        }
     }
+}
+
+.character-image {
+    background-image: url('../../../public/assets/skyrim-character-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    margin: 50px 0;
 }
