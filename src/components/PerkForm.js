@@ -37,18 +37,18 @@ export default class PerkForm extends React.Component {
         super();
 
         this.state = {
-            light: '',
-            lightlevel: '',
-            heavy: '',
-            heavylevel: '',
-            archery: '',
-            archerylevel: '',
-            onehand: '',
-            onehandlevel: '',
-            twohand: '',
-            twohandlevel: '',
-            magickadmg: '',
-            sneak: ''
+            light: '0',
+            lightlevel: '15',
+            heavy: '0',
+            heavylevel: '15',
+            archery: '0',
+            archerylevel: '15',
+            onehand: '0',
+            onehandlevel: '15',
+            twohand: '0',
+            twohandlevel: '15',
+            magickadmg: '0',
+            sneak: '0'
         };
 
         this.onHandleChange = this.onHandleChange.bind(this);
@@ -162,8 +162,9 @@ export default class PerkForm extends React.Component {
                     </div>
 
                     <div className='form-buttons'>
-                            <button className='clear-button' type="button" onClick={this.onFormClear}>Clear</button>
-                            <button className='submit-button' type="submit">Submit</button>
+                        <button className='back-button' type="button" onClick={this.onFormClear}>Back</button>
+                        <button className='clear-button' type="button" onClick={this.onFormClear}>Clear</button>
+                        <button className='submit-button' type="submit">Submit</button>
                     </div>
                 </form>
             </div>

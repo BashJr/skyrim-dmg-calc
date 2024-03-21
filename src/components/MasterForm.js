@@ -46,8 +46,8 @@ export default class MasterForm extends React.Component {
             necklace: '',
             ring: '',
             arrow: '',
-            lefthand: '',
-            righthand: '',
+            mainhand: '',
+            offhand: '',
             showArmor: false,
             showMasterFormOutput: false
         }

@@ -54,11 +54,11 @@ export default class CharacterForm extends React.Component {
 
         this.state = {
             name: '',
-            race: '',
-            level: '',
-            health: '',
-            magicka: '',
-            stamina: ''
+            race: 'High Elf',
+            level: '1',
+            health: '100',
+            magicka: '100',
+            stamina: '100'
         };
 
         this.onHandleChange = this.onHandleChange.bind(this);
@@ -111,7 +111,7 @@ export default class CharacterForm extends React.Component {
                     <h2>Character Form</h2>
                     <div className='form-input'>
                         <label>Name: </label>
-                        <input type="text" name="name" value={this.state.name} onChange={this.onHandleChange} />
+                        <input type="text" name="name" value={this.state.name} onChange={this.onHandleChange} placeholder="Name" />
                     </div>
 
                     <div className='form-input'>
@@ -123,22 +123,22 @@ export default class CharacterForm extends React.Component {
 
                     <div className='form-input'>
                         <label>Character Level: </label>
-                        <input type="number" name="level" min="1" value={this.state.level} onChange={this.onHandleChange} /> 
+                        <input type="number" name="level" min="1" value={this.state.level} onChange={this.onHandleChange} placeholder="Character Level" /> 
                     </div>
 
                     <div className='form-input'>
                         <label>Health: </label>
-                        <input type="number" name="health" min="1" value={this.state.health} onChange={this.onHandleChange} /> 
+                        <input type="number" name="health" step="10" value={this.state.health} onChange={this.onHandleChange} placeholder="Health" /> 
                     </div>
 
                     <div className='form-input'>
                         <label>Magicka: </label>
-                        <input type="number" name="magicka" min="1" value={this.state.magicka} onChange={this.onHandleChange} />
+                        <input type="number" name="magicka" step="10" value={this.state.magicka} onChange={this.onHandleChange} placeholder="Magicka" />
                     </div>
 
                     <div className='form-input'>
                         <label>Stamina: </label>
-                        <input type="number" name="stamina" min="1" value={this.state.stamina} onChange={this.onHandleChange} />
+                        <input type="number" name="stamina" step="10" value={this.state.stamina} onChange={this.onHandleChange} placeholder="Stamina" />
                     </div>
                     
                     <div className='form-buttons'>

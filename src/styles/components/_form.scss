@@ -37,13 +37,23 @@
             background-color: rgb(50, 205, 50, .7);
         }
 
+        .back-button {
+            background-color: rgb(255, 0, 0);
+        }
+
+        .back-button:hover,
+        .back-button:active {
+            background-color: rgb(255, 0, 0, .7);
+        }
+
         .clear-button {
-            background-color: red;
+            background-color: rgb(135, 206, 235);
         }
 
         .clear-button:hover,
         .clear-button:active {
-            background-color: rgb(255, 0, 0, .7);
+            background-color: rgb(135, 206, 235, .7);
+
         }
     }
 }

@@ -59,9 +59,9 @@ export default class MasterFormOutput extends React.Component{
                 
                 <label>Character Arrow: {this.props.data.arrow}</label> <br />
                 
-                <label>Character Left Hand: {this.props.data.lefthand}</label> <br />
+                <label>Character Main Hand: {this.props.data.mainhand}</label> <br />
                 
-                <label>Character Right Hand: {this.props.data.righthand}</label> <br />
+                <label>Character Off-Hand: {this.props.data.offhand}</label> <br />
             </div>
         );
     }
